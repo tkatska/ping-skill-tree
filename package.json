@@ -1,0 +1,28 @@
+{
+  "name": "ping-skill-tree",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm -w apps/web run dev",
+    "build": "npm -w packages/core run build && npm -w apps/web run build",
+    "test": "npm -w packages/core run test && npm -w apps/web run test", 
+    "lint": "npm -ws --if-present run lint",
+    "lint:fix": "npm -ws --if-present run lint:fix",
+    "format": "npm -ws --if-present run format",
+    "preview": "npm -w apps/web run preview" 
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "private": "true",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "devDependencies": {
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "prettier": "^3.6.2"
+  }
+}

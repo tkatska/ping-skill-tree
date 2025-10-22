@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/components/addnodedialog.tsx","./src/components/legend.tsx","./src/components/nodecard.tsx","./src/components/skillcanvas.tsx","./src/components/toolbar.tsx","./tests/addnodedialog.esc.spec.tsx","./tests/setup.ts","./tests/smoke.spec.tsx","./vite.config.ts"],"version":"5.9.3"}

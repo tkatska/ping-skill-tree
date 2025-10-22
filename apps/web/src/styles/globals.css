@@ -1,0 +1,18 @@
+:root {
+  --header-h: 64px;
+}
+.rf-wrapper {
+  height: calc(100dvh - var(--header-h));
+}
+/* visually hidden for a11y */
+.sr-only {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border: 0;
+  padding: 0;
+  margin: -1px;
+}
