@@ -7,9 +7,7 @@ description: >
   The app lets users build a skill dependency tree visually using React Flow.
   It demonstrates interactive UI patterns, modular architecture, and clean state management.
 
-# -------------------------------
-# 🎥 Demo
-# -------------------------------
+### Demo
 demo:
   loom_video: "https://www.loom.com/share/9803d2e70c2241259bef37873846607b"
   highlights:
@@ -18,9 +16,7 @@ demo:
     - Checking localStorage data persistence
     - Verifying Lighthouse accessibility & performance
 
-# -------------------------------
-# 🧱 Tech Stack
-# -------------------------------
+### Tech Stack
 tech_stack:
   - React 19 + TypeScript
   - Vite (modern build tool)
@@ -30,9 +26,7 @@ tech_stack:
   - ESLint + Prettier (linting & formatting)
   - Netlify (deployment)
 
-# -------------------------------
-# ⚙️ Setup & Run Locally
-# -------------------------------
+### Setup & Run Locally
 setup:
   steps: |
     ```bash
@@ -48,9 +42,7 @@ setup:
 
   local_url: "http://localhost:5173"
 
-# -------------------------------
-# 🧩 Project Structure
-# -------------------------------
+### Project Structure
 structure: |
   apps/
     └── web/                   # Main React front-end
@@ -78,53 +70,40 @@ structure: |
   packages/
     └── core/                  # Shared logic (reducer, storage, types)
 
-# -------------------------------
-# 🧠 Design Decisions
-# -------------------------------
-design_decisions:
-  - Controlled React Flow instance — state managed by reducer; React Flow mirrors props for instant updates.
-  - Cycle prevention — graph helpers detect and block circular edges.
-  - Keyboard accessibility — ESC key closes dialogs and restores focus.
-  - Semantic layout — uses <header> and <main> for accessibility.
-  - Persistence layer — debounced localStorage autosave.
-  - Type safety — strongly typed SkillState, Node, and Edge models.
+### Key Concepts
+- **Controlled React Flow instance:**  
+  State is managed via a reducer; React Flow mirrors props for smooth interactions.
+- **Cycle prevention:**  
+  Custom graph helpers detect and block circular dependencies.
+- **Keyboard accessibility:**  
+  ESC key closes dialogs with focus restoration.
+- **Semantic HTML:**  
+  Header and main regions improve structure and Lighthouse accessibility.
+- **Persistence layer:**  
+  LocalStorage autosaves via a debounced effect for instant state recovery.
+- **Type safety:**  
+  Fully typed SkillState, Node, and Edge models ensure robustness.
 
-# -------------------------------
-# 🧪 Testing
-# -------------------------------
-testing:
-  framework: Vitest + React Testing Library
-  main_tests:
-    - ESC key closes Add Skill dialog
-    - Smoke test for initial render
-    - Validation preventing circular or duplicate edges
-  command: "npm run test:ui"
+### Testing & Quality
+- **Vitest + React Testing Library**: covers happy path interactions  
+  → Smoke test, Add Node dialog, keyboard ESC behavior  
+- **ESLint + Prettier**: consistent code style and CI formatting checks  
+- **Lighthouse audit**: verified for accessibility, performance, and PWA readiness  
+- **Pre-commit safety**: local lint/test pass required before push  
 
-# -------------------------------
-# 📁 Folder Summary
-# -------------------------------
-folders:
-  - components: Core React components (fully typed, isolated)
-  - core: Reducer, shared logic, and data models
-  - tests: Vitest + RTL test coverage
-  - styles: Tailwind and base CSS
-  - dist: Production build output (ignored by Git)
+### CI/CD & Deployment
+- Built with **Vite** and TypeScript  
+- Auto-deployed via **Netlify** on each push to `main`  
+- Node version pinned via `netlify.toml` for environment consistency  
+- Build output: `/apps/web/dist`
 
-# -------------------------------
-# 💡 Why This Architecture
-# -------------------------------
-architecture_reasons:
-  - Clarity: separation between UI and logic layers
-  - Testability: isolated reducer and component logic
-  - Scalability: monorepo-friendly layout
-  - Maintainability: modern ESLint + Prettier setup
-  - Accessibility: semantic structure and keyboard support
+### Future Improvements
+- Replace alert() with a custom toast system for better UX  
+- Add drag-to-connect edge hints and keyboard navigation for graph  
+- Include dark mode toggle and theme persistence  
+- Expand unit tests for reducer edge cases  
 
-# -------------------------------
-# 🧑‍💻 Author
-# -------------------------------
-author:
-  name: "Olga Tkatska"
-  title: "Frontend Engineer"
-  skills: ["React", "TypeScript", "UI Systems", "Accessibility"]
-  contact: "github.com/tkatska"
+**Author:** Olga Tkatska  
+📦 Repo: [ping-skill-tree](https://github.com/tkatska/ping-skill-tree)  
+🌍 Live: [https://ping-skill-tree.netlify.app](https://ping-skill-tree.netlify.app)
+
