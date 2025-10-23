@@ -46,10 +46,7 @@ export default function App() {
 
   // simple, stable callbacks for toolbar buttons
   const onAdd = useCallback(() => setShowAdd(true), [])
-  const onFit = useCallback(() => {
-    // React Flow already provides a Fit control. Clicking it avoids duplicating logic.
-    ;(document.querySelector('[title="Fit view"]') as HTMLButtonElement | null)?.click()
-  }, [])
+
   const onReset = useCallback(() => {
     dispatch({ type: 'LOAD', payload: initialState })
   }, [])
@@ -67,7 +64,7 @@ export default function App() {
         </div>
         <div className="flex items-center gap-4">
           <Legend />
-          <Toolbar onAdd={onAdd} onFit={onFit} onReset={onReset} />
+          <Toolbar onAdd={onAdd} onReset={onReset} />
         </div>
       </header>
 
