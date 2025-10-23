@@ -43,32 +43,55 @@ setup:
   local_url: "http://localhost:5173"
 
 ### Project Structure
-structure: |
-  apps/
-    └── web/                   # Main React front-end
-        ├── public/            # Static assets
-        ├── src/
-        │   ├── assets/        # Icons, images
-        │   ├── components/    # Reusable UI components
-        │   │   ├── AddNodeDialog.tsx
-        │   │   ├── SkillCanvas.tsx
-        │   │   ├── NodeCard.tsx
-        │   │   ├── Toolbar.tsx
-        │   │   └── Legend.tsx
-        │   ├── styles/        # Tailwind + global CSS
-        │   │   └── tailwind.css
-        │   ├── tests/         # Vitest + RTL tests
-        │   │   ├── smoke.spec.tsx
-        │   │   └── addNodeDialog.esc.spec.tsx
-        │   ├── App.tsx        # Root shell (semantic header + main)
-        │   ├── main.tsx       # Entry point
-        │   └── index.css      # Base imports
-        ├── vite.config.ts     # Vite + JSDOM test env config
-        ├── eslint.config.js   # Modern ESLint setup
-        ├── tsconfig.json      # TypeScript config
-        └── README.md
-  packages/
-    └── core/                  # Shared logic (reducer, storage, types)
+### Project Structure
+
+```yaml
+apps:
+  web: # Main React front-end
+    public: # Static assets
+    src:
+      assets: # Icons, images, and SVGs
+      components: # Reusable UI components
+        AddNodeDialog.tsx: Form modal for adding new nodes
+        Legend.tsx: Color legend for locked/unlocked nodes
+        NodeCard.tsx: Individual skill node display
+        SkillCanvas.tsx: Core React Flow canvas
+        Toolbar.tsx: Top controls (add node, reset, etc.)
+      styles: # Tailwind + global styles
+        - App.css
+        - index.css
+        - tailwind.css
+      App.tsx: Root shell (semantic layout)
+      main.tsx: Application entry point
+    tests: # Vitest + RTL tests
+      - smoke.spec.tsx
+      - SkillCanvas.spec.tsx
+    eslint.config.js: Linting configuration
+    vite.config.ts: Vite + JSDOM test environment
+    tsconfig.json: TypeScript configuration
+packages:
+  core: # Shared logic and utilities
+    src:
+      reducer.ts: State reducer logic
+      schema.ts: Data schema definitions
+      selectors.ts: Graph selectors
+      storage.ts: LocalStorage utilities
+      types.ts: Shared TypeScript types
+      validators.ts: Validation helpers
+    tests: # Unit tests for core logic
+      - reducer.spec.ts
+      - validators.spec.ts
+config:
+  - netlify.toml: Deployment configuration
+root:
+  - package.json
+  - package-lock.json
+  - tsconfig.base.json
+  - .prettierrc
+  - .prettierignore
+  - .gitignore
+  - README.md
+```
 
 ### Key Concepts
 - **Controlled React Flow instance:**  
