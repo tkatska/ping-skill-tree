@@ -9,7 +9,7 @@ description: >
 
 ### Demo
 demo:
-  loom_video: "https://www.loom.com/share/9803d2e70c2241259bef37873846607b"
+  loom_video: "https://www.loom.com/share/82f6cd0a3249450d88f168b145fd1ff3"
   highlights:
     - Adding a new skill node
     - Preventing circular dependencies
